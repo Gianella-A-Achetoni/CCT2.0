@@ -68,8 +68,8 @@
                         <td>${evento.titulo}</td>
                         <td>${evento.descripcion}</td>
                         <td class="d-flex gap-2">
-                            <button class="btn text-white fs-6" style="background-color:#1F509A;" onclick="editDate(${index})">MODIFICAR</button>
-                            <button class="btn text-white fs-6" style="background-color:#1F509A;" onclick="deleteDate(${index})">ELIMINAR</button>
+                            <button class="btn text-white fs-6 nav-link p-2" style="background-color:#1F509A;" onclick="editDate(${index})">MODIFICAR</button>
+                            <button class="btn text-white fs-6 nav-link-borrar p-2" style="background-color:#1F509A;" onclick="deleteDate(${index})">ELIMINAR</button>
                         </td>
                     </tr>
                 `;
