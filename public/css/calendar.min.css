@@ -1,0 +1,22 @@
+.calendar-container {
+    background: #1F509A;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+#calendar {
+    min-height: 600px; /* 👈 altura necesaria */
+}
+.event-details {
+    background: #1F509A;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.fc-h-event, .fc-event-title{
+    cursor: pointer !important;
+}

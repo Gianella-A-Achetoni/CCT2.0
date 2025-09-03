@@ -1,0 +1,15 @@
+.carousel-custom {
+  height: 90vh; /* altura por defecto (desktop) */
+}
+
+@media (max-width: 768px) {
+  .carousel-custom {
+    height: 300px; /* altura en tablets y celulares */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-custom {
+    height: 200px; /* altura más chica en celulares pequeños */
+  }
+}

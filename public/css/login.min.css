@@ -1,0 +1,34 @@
+/* Contenedor que ocupa todo el alto */
+.full-height {
+    min-height: calc(100vh - 75px - 50px) !important; 
+}
+
+/* Colores */
+.bg-azul { background-color: #0A3981; }
+.bg-azul-claro { background-color: #1F509A; }
+
+/* Botón */
+.btn-login {
+    background: white;
+    color: #0A3981;
+    font-weight: 600;
+}
+.btn-login:hover {
+    background: #E38E49;
+    color: white;
+}
+
+/* Panel decorativo */
+.decorativo {
+    background-image: url('https://res.cloudinary.com/dobrqphwu/image/upload/v1755702972/alumnos_trabajando_LE_upscale_balanced_x4_batj7j.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%; /* <-- clave: ocupar toda la altura de la pantalla */
+}
+
+/* Card de login */
+.login-card {
+    max-width: 400px;
+    width: 100%;
+}
+

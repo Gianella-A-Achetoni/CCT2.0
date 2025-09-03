@@ -1,0 +1,49 @@
+  body {
+    padding-top: 72px;
+  }
+  /* Hover para Campus */
+  .nav-link[style] {
+    transition: background-color 0.3s ease;
+  }
+  .nav-link[style]:hover {
+    background-color: #E38E49 !important;
+    color: #0A3981 !important;
+  }
+  .nav-link:hover{
+    color: #E38E49 !important;
+  }
+/* Color naranja para el enlace activo */
+  .nav-link.active {
+    color: #E38E49 !important;
+  }
+  /* Solo cambia el fondo del menú desplegable móvil */
+  @media (max-width: 767.98px) {
+    .custom-bg-blue.collapse {
+      background-color: #0A3981;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      z-index: 1040;
+    }
+  }
+.bg-azul { background-color: #0A3981; }
+.bg-azul-claro { background-color: #1F509A; }
+
+.full-height {
+  min-height: calc(100vh - 75px - 50px) !important; 
+}
+
+  /* Hover para Campus */
+  .nav-link-borrar[style] {
+    transition: background-color 0.3s ease;
+  }
+  .nav-link-borrar[style]:hover {
+    background-color: #ff3939 !important;
+    color: #0A3981 !important;
+  }
+  .nav-link-borrar:hover{
+    color: #ff1e1e !important;
+  }
