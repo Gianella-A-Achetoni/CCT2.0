@@ -99,7 +99,7 @@
             <!-- Carrera 5 -->
             <div class="row bg-primary text-white shadow-lg d-flex align-items-stretch p-4">
                 <div class="col-md-6 d-flex">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTabVl1YioP9EFCso0C3gP9fGyw7mon_GFiA&s" 
+                    <img src="https://res.cloudinary.com/diue0jbyq/image/upload/v1771421755/WhatsApp_Image_2026-02-18_at_10.30.13_AM_fxynkv.jpg" 
                         alt="Electricista" class="img-fluid rounded w-100" style="object-fit: cover;">
                 </div>
                 <div class="col-md-6 d-flex flex-column justify-content-center">

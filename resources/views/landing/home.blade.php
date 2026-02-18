@@ -81,40 +81,119 @@
             </section>
 
             <section class="mb-0 mt-5">
-                <h2 class="mb-5">Personal</h2>
-                <div>
-                    <h3>Director:</h3>
-                    <img src="" alt="">
-                    <h4>Carlos Rivera</h4>
-                </div>
-                <div>
-                    <h3>Docentes:</h3>
-                    <div>
-                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701631/WhatsApp_Image_2025-08-13_at_16.59.39_mfobj4.jpg" alt="" class="" style="width: 150px;">
-                        <h4>Fernando Felizia</h4>
-                        <h4>Profesor de informatica</h4>
+                <h2 class="mb-5 text-center text-primary border-bottom pb-2 fs-1">Personal</h2>
+                <h3 class="mb-4 text-center">Director</h3>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card text-center h-100 shadow">
+                        <img src="img/director.jpg" class="card-img-top" alt="Director">
+                        <div class="card-body">
+                        <h5 class="card-title">Carlos Rivera</h5>
+                        </div>
                     </div>
-                    <div>
-                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701618/WhatsApp_Image_2025-08-13_at_19.30.36_u0ctbe.jpg" alt="" style="width: 150px;">
-                        <h4>Noelia Tobio</h4>
-                        <h4>Profesora de administración</h4>
-                    </div>
-                    <div>
-                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701681/IMG_20250617_142436_aldila.jpg" alt="" style="width: 150px;">
-                        <h4></h4>
-                        <h4></h4>
-                    </div>
-                    <div>
-                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701721/IMG_20250617_142649_a7aidp.jpg" alt="" style="width: 150px;">
-                        <h4></h4>
-                        <h4></h4>
                     </div>
                 </div>
-                <div>
-                    <h3>Mantenimiento:</h3>
-                    <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701657/IMG_20250617_150656_kzhtq9.jpg" alt="" style="width: 150px;">
-                    <h4></h4>
+                <!-- DOCENTES -->
+                <h3 class="mb-4 text-center">Docentes</h3>
+                <div class="row g-4">
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701631/WhatsApp_Image_2025-08-13_at_16.59.39_mfobj4.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Fernando Felizia</h5>
+                        <p class="card-text">Docente del Módulo informática aplicada a la industria textil.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701618/WhatsApp_Image_2025-08-13_at_19.30.36_u0ctbe.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Noelia Tobio</h5>
+                        <p class="card-text">Docente de los Módulos de administración Textil / Electricidad / Soldadura.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701681/IMG_20250617_142436_aldila.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Miguel Litwinczuk</h5>
+                        <p class="card-text">Docente del Trayecto formativo gastronomía: Panadero / Cocinero.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701721/IMG_20250617_142649_a7aidp.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Miriam Gatica</h5>
+                        <p class="card-text">Docente del trayecto formativo de textil.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/diue0jbyq/image/upload/v1771421716/WhatsApp_Image_2026-02-18_at_10.30.05_AM_x88ksg.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Facundo López</h5>
+                        <p class="card-text">Docente del trayecto formativo Electricidad.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/diue0jbyq/image/upload/v1771422764/WhatsApp_Image_2026-02-18_at_10.52.17_AM_geeizu.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Romina Bulos</h5>
+                        <p class="card-text">Docente del Módulo idioma aplicado al sector gastronómico.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="https://res.cloudinary.com/diue0jbyq/image/upload/v1771423056/user_nmvbtl.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Mariana Ojeda</h5>
+                        <p class="card-text">Docente del módulo de diseño de indumentaria y objetos textiles.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow text-center">
+                        <img src="img/director.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Carlos Rivas</h5>
+                        <p class="card-text">Docente del Trayecto formativo Soldador.</p>
+                        </div>
+                    </div>
+                    </div>
+
                 </div>
+
+                <!-- MANTENIMIENTO -->
+                <h3 class="mt-5 mb-4 text-center">Mantenimiento</h3>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-sm-6">
+                    <div class="card text-center h-100 shadow">
+                        <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701657/IMG_20250617_150656_kzhtq9.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Iris Fagetti</h5>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                
+
             </section>
         </div>
     </section class=mb-0>
