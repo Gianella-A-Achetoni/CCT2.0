@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +33,13 @@ Route::get('/iniciodeseccion', function () {
 //Route campus alumno
 Route::get('/estudiantes', function () {
     return view('students.home');
-})->name('campusestudiantes');
-
-Route::get('/estudiantes', function () {
-    return view('students.course');
 })->name('estudiantes');
+
+Route::get('/cursos/{id}', [CourseController::class, 'show'])->name('cursos.show');
+
+Route::get('/cursoestudiantes', function () {
+    return view('students.course');
+})->name('cursoestudiantes');
 
 //Route campus profesor
 Route::get('/profesor', function () {

@@ -63,6 +63,7 @@
     <!-- Tus scripts -->
     <script src="js/bootstrap.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/butonfilter.js"></script>
 
     <!-- JS para el año -->
     <script>

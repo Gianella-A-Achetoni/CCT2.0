@@ -8,7 +8,7 @@
             <!-- Carrera 1 -->
             <div class="row bg-primary text-white shadow-lg mb-4 d-flex align-items-stretch p-4">
                 <div class="col-md-6 d-flex">
-                    <img src="https://blogs.unitec.mx/hubfs/Qu%C3%A9%20estudia%20la%20carrera%20de%20gastronom%C3%ADa.jpg" 
+                    <img src="https://res.cloudinary.com/dobrqphwu/image/upload/v1755701702/IMG_20250617_151902_opfqm8.jpg" 
                         alt="Gastronomia" class="img-fluid rounded w-100" style="object-fit: cover;">
                 </div>
                 <div class="col-md-6 d-flex flex-column justify-content-center">
