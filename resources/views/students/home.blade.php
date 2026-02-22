@@ -44,16 +44,20 @@
             @endphp
 
             @foreach($cursos as $curso)
-            <a href="{{ route('cursos.show', $curso->id ?? 1) }}" class="text-decoration-none">
-                <div class="card text-white bg-primary shadow-sm h-100 curso-click">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $curso['nombre'] ?? $curso->nombre }}</h5>
-                        <p class="card-text">
-                            Profesor: {{ $curso['profesor'] ?? $curso->profesor }}
-                        </p>
-                    </div>
+                <div class="col-12 col-md-4 curso-card" data-categoria="{{ $curso['categoria'] ?? $curso->categoria }}">
+                    <a href="{{ route('cursos.show', $curso->id ?? 1) }}" class="text-decoration-none">
+                        <div class="card text-white bg-primary shadow-sm h-100 curso-click">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{ $curso['nombre'] ?? $curso->nombre }}
+                                </h5>
+                                <p class="card-text">
+                                    Profesor: {{ $curso['profesor'] ?? $curso->profesor }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
             @endforeach
         </div>
 

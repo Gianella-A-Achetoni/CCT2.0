@@ -50,9 +50,9 @@ Route::get('/cursoprofesor', function () {
     return view('teachers.course');
 })->name('cursoprofesor');
 
-Route::get('/creacursoprofesor', function () {
+Route::get('/profesor/creacurso', function () {
     return view('teachers.setUp');
-})->name('creacursoprofesor');
+})->name('creacurso');
 
 //Routes Admin
 Route::get('/admin', function () {

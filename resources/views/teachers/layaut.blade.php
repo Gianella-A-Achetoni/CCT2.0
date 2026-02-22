@@ -63,6 +63,30 @@
     <!-- Tus scripts -->
     <script src="js/bootstrap.js"></script>
     <script src="js/app.js"></script>
+    <script>
+    document.getElementById("crearCursoBtn").addEventListener("click", function () {
+
+        const nombre = document.getElementById("nombreCurso").value.trim();
+        const taller = document.getElementById("tallerSeleccionado").value;
+
+        const alertaError = document.getElementById("alertaError");
+        const alertaExito = document.getElementById("alertaExito");
+
+        alertaError.classList.add("d-none");
+        alertaExito.classList.add("d-none");
+
+        if (!nombre || !taller) {
+            alertaError.classList.remove("d-none");
+            return;
+        }
+
+        alertaExito.classList.remove("d-none");
+
+        // limpiar
+        document.getElementById("nombreCurso").value = "";
+        document.getElementById("tallerSeleccionado").value = "";
+    });
+    </script>
 
     <!-- JS para el año -->
     <script>

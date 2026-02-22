@@ -26,8 +26,11 @@
                     <li><a class="dropdown-item" href="#" data-filter="todos">Todos</a></li>
                 </ul>
             </div>
+            
         </div>
-
+        <a href="./profesor/creacurso" class="btn btn-primary btn-lg mt-5">
+            Crear Curso
+        </a>
         <!-- Sección Todos los cursos -->
         <h3 class="pb-4 fw-bold mt-5">Todos los cursos</h3>
         <div class="row g-3">
@@ -44,16 +47,20 @@
             @endphp
 
             @foreach($cursos as $curso)
-            <a href="{{ route('cursos.show', $curso->id ?? 1) }}" class="text-decoration-none">
-                <div class="card text-white bg-primary shadow-sm h-100 curso-click">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $curso['nombre'] ?? $curso->nombre }}</h5>
-                        <p class="card-text">
-                            Profesor: {{ $curso['profesor'] ?? $curso->profesor }}
-                        </p>
-                    </div>
+                <div class="col-12 col-md-4 curso-card" data-categoria="{{ $curso['categoria'] ?? $curso->categoria }}">
+                    <a href="{{ route('cursos.show', $curso->id ?? 1) }}" class="text-decoration-none">
+                        <div class="card text-white bg-primary shadow-sm h-100 curso-click">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{ $curso['nombre'] ?? $curso->nombre }}
+                                </h5>
+                                <p class="card-text">
+                                    Profesor: {{ $curso['profesor'] ?? $curso->profesor }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
             @endforeach
         </div>
 
