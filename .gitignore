@@ -16,3 +16,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+docker/
+.docker-tmp/
+.dockerignore
+Dockerfile
+README.md
+docker-compose.yml

@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CampusController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CalendarEventController;
+use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\Admin\UserManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,55 +18,52 @@ use App\Http\Controllers\CourseController;
 |
 */
 
-Route::get('/', function () {
-    return view('landing.home');
-})->name('inicio');
+Route::view('/', 'landing.home')->name('inicio');
+Route::view('/calendario', 'landing.calendar')->name('calendario');
+Route::view('/carreras', 'landing.courses')->name('carreras');
+Route::get('/eventos', [CalendarEventController::class, 'feed'])->name('calendar.events.feed');
 
-Route::get('/calendario', function () {
-    return view('landing.calendar');
-})->name('calendario');
+Route::middleware('guest')->group(function () {
+    Route::get('/iniciodeseccion', [SessionController::class, 'create'])->name('iniciodeseccion');
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
+    Route::post('/iniciodeseccion', [SessionController::class, 'store'])->name('login.attempt');
+});
 
-Route::get('/carreras', function () {
-    return view('landing.courses');
-})->name('carreras');
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+    Route::get('/campus', [CampusController::class, 'redirectByRole'])->name('campus.redirect');
 
-Route::get('/iniciodeseccion', function () {
-    return view('landing.login');
-})->name('iniciodeseccion');
+    Route::middleware('role:student')->group(function () {
+        Route::get('/estudiantes', [CampusController::class, 'studentHome'])->name('estudiantes');
+        Route::get('/cursoestudiantes', [CampusController::class, 'studentCoursePage'])->name('cursoestudiantes');
+    });
 
-//Route campus alumno
-Route::get('/estudiantes', function () {
-    return view('students.home');
-})->name('estudiantes');
+    Route::middleware('role:teacher')->group(function () {
+        Route::get('/profesor', [CampusController::class, 'teacherHome'])->name('profesor');
+        Route::get('/cursoprofesor', [CampusController::class, 'teacherCoursePage'])->name('cursoprofesor');
+        Route::get('/creacursoprofesor', [CampusController::class, 'teacherCourseSetup'])->name('creacursoprofesor');
+        Route::post('/creacursoprofesor', [CourseController::class, 'store'])->name('profesor.cursos.store');
+    });
 
-Route::get('/cursos/{id}', [CourseController::class, 'show'])->name('cursos.show');
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/admin', [CampusController::class, 'adminHome'])->name('admin');
 
-Route::get('/cursoestudiantes', function () {
-    return view('students.course');
-})->name('cursoestudiantes');
+        Route::get('/usuarios', [UserManagementController::class, 'index'])->name('usuarios');
+        Route::post('/usuarios', [UserManagementController::class, 'store'])->name('usuarios.store');
+        Route::delete('/usuarios/{user}', [UserManagementController::class, 'destroy'])->name('usuarios.destroy');
 
-//Route campus profesor
-Route::get('/profesor', function () {
-    return view('teachers.home');
-})->name('profesor');
+        Route::get('/subir', [CalendarEventController::class, 'index'])->name('subir');
+        Route::post('/subir', [CalendarEventController::class, 'store'])->name('subir.store');
+        Route::delete('/subir/{event}', [CalendarEventController::class, 'destroy'])->name('subir.destroy');
+    });
 
-Route::get('/cursoprofesor', function () {
-    return view('teachers.course');
-})->name('cursoprofesor');
+    Route::middleware('role:admin|teacher|student')->group(function () {
+        Route::get('/cursos/{course}', [CourseController::class, 'show'])->name('cursos.show');
+    });
 
-Route::get('/creacursoprofesor', function () {
-    return view('teachers.setUp');
-})->name('creacursoprofesor');
-
-//Routes Admin
-Route::get('/admin', function () {
-    return view('admin.home');
-})->name('admin');
-
-Route::get('/usuarios', function () {
-    return view('admin.users');
-})->name('usuarios');
-
-Route::get('/subir', function () {
-    return view('admin.update');
-})->name('subir');
+    Route::middleware('role:admin|teacher')->group(function () {
+        Route::post('/cursos/{course}/students', [CourseController::class, 'enrollStudent'])->name('cursos.students.store');
+        Route::post('/cursos/{course}/news', [CourseController::class, 'storeNews'])->name('cursos.news.store');
+        Route::post('/cursos/{course}/materials', [CourseController::class, 'storeMaterial'])->name('cursos.materials.store');
+    });
+});

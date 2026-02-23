@@ -7,6 +7,31 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## CCT Campus (roles y permisos)
+
+Este proyecto ahora usa **Spatie Laravel Permission** con 3 roles:
+
+- `admin`
+- `teacher`
+- `student`
+
+Entidades principales implementadas:
+
+- Cursos (`courses`) con `teacher_id`
+- Inscripción de alumnos (`course_user`)
+- Noticias por curso (`course_news`)
+- Materiales por curso (`course_materials`)
+- Eventos de calendario (`calendar_events`)
+
+### Usuarios demo (seeders)
+
+Contraseña para todos: `password`
+
+- Admin: `admin@cct.local`
+- Profesor: `profesor@cct.local`
+- Estudiante 1: `estudiante1@cct.local`
+- Estudiante 2: `estudiante2@cct.local`
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

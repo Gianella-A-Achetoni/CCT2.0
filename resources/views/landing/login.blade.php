@@ -11,13 +11,19 @@
                         <div class="text-center mb-4">
                             <i class="bi bi-person-circle" style="font-size: 3rem;"></i>
                         </div>
-                        <form method="POST">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                {{ $errors->first() }}
+                            </div>
+                        @endif
+                        <form method="POST" action="{{ route('login.attempt') }}">
+                            @csrf
                             <div class="mb-3">
-                                <label for="usuario" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="usuario-mobile" name="usuario" placeholder="USUARIO" required>
+                                <label for="usuario-mobile" class="form-label">Usuario o correo</label>
+                                <input type="text" class="form-control" id="usuario-mobile" name="usuario" placeholder="USUARIO" value="{{ old('usuario') }}" required>
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
+                                <label for="password-mobile" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="password-mobile" name="password" placeholder="CONTRASEÑA" required>
                             </div>
                             <button type="submit" class="btn btn-login w-100 mt-3">Iniciar Sesión</button>
@@ -31,10 +37,21 @@
                         <div class="text-center mb-4">
                             <i class="bi bi-person-circle" style="font-size: 3rem;"></i>
                         </div>
-                        <form method="POST">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                {{ $errors->first() }}
+                            </div>
+                        @endif
+                        <form method="POST" action="{{ route('login.attempt') }}">
+                            @csrf
                             <div class="mb-3">
-                                <label for="usuario" class="form-label fs-5">Usuario</label>
-                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="USUARIO" required>
+                                <label for="usuario" class="form-label fs-5">Usuario o correo</label>
+                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="USUARIO" value="{{ old('usuario') }}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label fs-5">Contraseña</label>

@@ -8,9 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Tu CSS opcional -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 </head>
 <body>
     <header>
@@ -18,18 +16,19 @@
             <div class="container h-100 d-flex justify-content-between align-items-center ml-0">
                 <!-- Logo -->
                 <a class="navbar-brand d-flex align-items-center text-white fw-bold fs-4 h-100" href="{{route('estudiantes')}}">
-                    <img src="img/casa.png" alt="home" style="height:55px;">
+                    <img src="{{ asset('img/casa.png') }}" alt="home" style="height:55px;">
                 </a>
 
                 <!-- Menú -->
                 <div class="custom-bg-blue h-100 d-flex align-items-center" id="navbarMenu">
                     <ul class="navbar-nav d-flex flex-row gap-3 align-items-center fw-medium fs-5 mb-0 h-100">
                         <li class="nav-item h-100 d-flex align-items-center">
-                            <a class="nav-link px-4 py-2 rounded text-white" 
-                            href="{{route('iniciodeseccion')}}" 
-                            style="background-color: #1F509A;">
-                                Cerrar Sección
-                            </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="nav-link px-4 py-2 rounded text-white border-0" style="background-color: #1F509A;">
+                                    Cerrar sesión
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -61,9 +60,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Tus scripts -->
-    <script src="js/bootstrap.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/butonfilter.js"></script>
+    <script src="{{ asset('js/butonfilter.js') }}"></script>
 
     <!-- JS para el año -->
     <script>

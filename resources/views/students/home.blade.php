@@ -3,16 +3,21 @@
 @section('contenido')
 <section class="mb-0 min-vh-100">
     <div class="container my-0 pb-5 pt-5">
-        <!-- Buscador y filtro -->
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
         <div class="d-flex gap-2 align-items-center my-3 mx-5" style="max-width: 450px;">
-            <input 
-                type="text" 
+            <input
+                type="text"
                 id="searchInput"
-                class="form-control form-control-sm" 
+                class="form-control form-control-sm"
                 placeholder="Buscar curso..."
             >
             <div class="dropdown">
-                <button 
+                <button
                     class="btn btn-sm btn-primary dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
@@ -28,61 +33,32 @@
             </div>
         </div>
 
-        <!-- Sección Todos los cursos -->
-        <h3 class="pb-4 fw-bold mt-5">Todos los cursos</h3>
+        <h3 class="pb-4 fw-bold mt-5">Mis cursos</h3>
         <div class="row g-3">
-            @php
-                // Simulando cursos que vienen de la base de datos
-                $cursos = [
-                    ['nombre' => 'Programación Web', 'profesor' => 'Juan Pérez', 'categoria' => 'programacion'],
-                    ['nombre' => 'Base de Datos', 'profesor' => 'María Gómez', 'categoria' => 'programacion'],
-                    ['nombre' => 'Diseño UX/UI', 'profesor' => 'Laura Sánchez', 'categoria' => 'diseno'],
-                    ['nombre' => 'Marketing Digital', 'profesor' => 'Carlos López', 'categoria' => 'marketing'],
-                    ['nombre' => 'Redes Sociales', 'profesor' => 'Ana Torres', 'categoria' => 'marketing'],
-                    ['nombre' => 'Illustrator', 'profesor' => 'Marina Díaz', 'categoria' => 'diseno'],
-                ];
-            @endphp
-
-            @foreach($cursos as $curso)
-            <a href="{{ route('cursos.show', $curso->id ?? 1) }}" class="text-decoration-none">
-                <div class="card text-white bg-primary shadow-sm h-100 curso-click">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $curso['nombre'] ?? $curso->nombre }}</h5>
-                        <p class="card-text">
-                            Profesor: {{ $curso['profesor'] ?? $curso->profesor }}
-                        </p>
+            @forelse($cursos as $curso)
+                <div class="col-md-4 curso" data-categoria="{{ \Illuminate\Support\Str::slug($curso->categoria ?? 'otros') }}">
+                    <a href="{{ route('cursos.show', $curso) }}" class="text-decoration-none">
+                        <div class="card text-white bg-primary shadow-sm h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $curso->nombre }}</h5>
+                                <p class="card-text mb-1">
+                                    Profesor: {{ $curso->teacher?->name ?? 'Sin asignar' }}
+                                </p>
+                                <p class="card-text mb-0">
+                                    Categoría: {{ $curso->categoria ?? 'Sin categoría' }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @empty
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        No estás inscripto en cursos todavía.
                     </div>
                 </div>
-            </a>
-            @endforeach
+            @endforelse
         </div>
-
     </div>
 </section>
-
-<!-- Script para filtro (opcional) -->
-<script>
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            const filter = this.getAttribute('data-filter');
-            document.querySelectorAll('.curso-card').forEach(card => {
-                if(filter === 'todos' || card.dataset.categoria === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Buscador simple
-    document.getElementById('searchInput').addEventListener('input', function() {
-        const term = this.value.toLowerCase();
-        document.querySelectorAll('.curso-card').forEach(card => {
-            const nombre = card.querySelector('.card-title').textContent.toLowerCase();
-            card.style.display = nombre.includes(term) ? 'block' : 'none';
-        });
-    });
-</script>
 @endsection
