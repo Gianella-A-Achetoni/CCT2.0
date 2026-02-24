@@ -19,10 +19,14 @@
                     <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre') }}" required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="categoria" class="form-label">Categoría</label>
-                    <input type="text" id="categoria" name="categoria" class="form-control" value="{{ old('categoria') }}">
-                </div>
+                <select id="categoria" name="categoria" class="form-select" required>
+                    <option value="">Seleccionar categoría</option>
+                    <option value="F.P. Gastronomía-Panadero">F.P. Gastronomía-Panadero</option>
+                    <option value="F.P. Soldador">F.P. Soldador</option>
+                    <option value="F.P. Textil">F.P. Textil</option>
+                    <option value="C.C. Operador de Pc">C.C. Operador de Pc</option>
+                    <option value="F.P. Auxiliar electricista de redes">F.P. Auxiliar electricista de redes</option>
+                </select>
 
                 <div class="mb-3">
                     <label for="fecha_apertura" class="form-label">Fecha de apertura</label>

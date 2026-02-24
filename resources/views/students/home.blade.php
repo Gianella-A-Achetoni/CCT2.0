@@ -25,9 +25,11 @@
                     Filtrar
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" data-filter="programacion">Programación</a></li>
-                    <li><a class="dropdown-item" href="#" data-filter="diseno">Diseño</a></li>
-                    <li><a class="dropdown-item" href="#" data-filter="marketing">Marketing</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="fp-gastronomia-panadero">F.P. Gastronomía-Panadero</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="fp-soldador">F.P. Soldador</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="fp-textil">F.P. Textil</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="cc-operador-de-pc">C.C. Operador de Pc</a></li>
+                    <li><a class="dropdown-item" href="#" data-filter="fp-auxiliar-electricista-de-redes">F.P. Auxiliar electricista de redes</a></li>
                     <li><a class="dropdown-item" href="#" data-filter="todos">Todos</a></li>
                 </ul>
             </div>
