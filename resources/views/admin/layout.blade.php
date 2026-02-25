@@ -50,7 +50,7 @@
             <p class="mb-0">
                 Contacto: 
                 <a href="mailto:codigofrsr@gmail.com" class="text-light text-decoration-underline hover-white">
-                    codigofrsr@gmail.com
+                    cct6401sup@gmail.com
                 </a>
             </p>
         </div>

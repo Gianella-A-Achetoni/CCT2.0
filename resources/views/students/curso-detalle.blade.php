@@ -144,14 +144,14 @@
                             </div>
                             <div class="mb-3">
                                 <select name="type" class="form-select" required>
-                                    <option value="file">Archivo</option>
+                                   <!--  <option value="file">Archivo</option> -->
                                     <option value="link">Enlace</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Archivo (si elegís tipo archivo)</label>
                                 <input type="file" name="file" class="form-control">
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label class="form-label">URL (si elegís tipo enlace)</label>
                                 <input type="url" name="external_url" class="form-control" placeholder="https://...">
